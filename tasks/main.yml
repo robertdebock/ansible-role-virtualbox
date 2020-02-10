@@ -1,18 +1,20 @@
 ---
 # tasks file for virtualbox
-- name: import rpm key
-  rpm_key:
-    state: present
-    key: "{{ virtualbox_key }}"
+- name: configure yum repository
+  block:
+    - name: import rpm key
+      rpm_key:
+        state: present
+        key: "{{ virtualbox_key }}"
+
+    - name: place yum repository
+      yum_repository:
+        name: virtualbox
+        description: Fedora $releasever - $basearch - VirtualBox
+        baseurl: "{{ virtualbox_yum_baseurl }}"
+        gpgcheck: yes
   when:
     - ansible_pkg_mgr in ['yum', 'dnf', 'zypper']
-
-- name: place yum repository
-  yum_repository:
-    name: virtualbox
-    description: Fedora $releasever - $basearch - VirtualBox
-    baseurl: "{{ virtualbox_yum_baseurl }}"
-    gpgcheck: yes
 
 - name: install requirements
   package:
