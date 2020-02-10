@@ -1,0 +1,4 @@
+---
+# handlers file for virtualbox
+- name: run vboxconfig
+  command: /sbin/vboxconfig
