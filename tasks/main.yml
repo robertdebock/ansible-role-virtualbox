@@ -16,6 +16,20 @@
   when:
     - ansible_pkg_mgr in ['yum', 'dnf', 'zypper']
 
+- name: configure apt repository
+  block:
+    - name: import key
+      apt_key:
+        url: "{{ virtualbox_key }}"
+        state: present
+
+    - name: place apt repository
+      apt_repository:
+        repo: deb [arch=amd64] {{ virtualbox_apt_repository }} {{ ansible_distribution_release }} contrib
+        state: present
+  when:
+    - ansible_pkg_mgr in ['apt']
+
 - name: install requirements
   package:
     name: "{{ virtualbox_requirements }}"

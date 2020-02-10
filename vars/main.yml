@@ -6,6 +6,9 @@ virtualbox_key: "https://www.virtualbox.org/download/oracle_vbox.asc"
 _virtualbox_requirements:
   default:
     - kernel-devel
+  Debian: []
+
+virtualbox_requirements: "{{ _virtualbox_requirements[ansible_os_family] | default(_virtualbox_requirements['default']) }}"
 
 _virtualbox_repo_mapping:
   Fedora: fedora
@@ -17,4 +20,4 @@ virtualbox_repo_mapping: "{{ _virtualbox_repo_mapping[ansible_distribution] }}"
 
 virtualbox_yum_baseurl: "http://download.virtualbox.org/virtualbox/rpm/{{ virtualbox_repo_mapping }}/$releasever/$basearch"
 
-virtualbox_requirements: "{{ _virtualbox_requirements[ansible_os_family] | default(_virtualbox_requirements['default']) }}"
+virtualbox_apt_repository: "https://download.virtualbox.org/virtualbox/debian"
