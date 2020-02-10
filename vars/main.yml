@@ -13,7 +13,7 @@ _virtualbox_repo_mapping:
   EL: el
   openSUSE Leap: opensuse
 
-virtualbox_repo_mapping: "{{ }_virtualbox_repo_mapping[ansible_distribution]}"
+virtualbox_repo_mapping: "{{ _virtualbox_repo_mapping[ansible_distribution] }}"
 
 virtualbox_yum_baseurl: "http://download.virtualbox.org/virtualbox/rpm/{{ virtualbox_repo_mapping }}/$releasever/$basearch"
 
