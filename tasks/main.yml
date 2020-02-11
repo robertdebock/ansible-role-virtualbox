@@ -21,6 +21,7 @@
     - name: import key
       apt_key:
         url: "{{ virtualbox_key }}"
+        validate_certs: no
         state: present
 
     - name: place apt repository
