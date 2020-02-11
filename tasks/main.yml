@@ -5,7 +5,8 @@
     - name: import rpm key
       rpm_key:
         state: present
-        key: "{{ virtualbox_key }}"
+        key: "{{ item }}"
+      loop: "{{ virtualbox_keys }}"
 
     - name: place yum repository
       yum_repository:
@@ -18,16 +19,17 @@
 
 - name: configure apt repository
   block:
-    - name: import key
+    - name: import apt key
       apt_key:
-        url: "{{ virtualbox_key }}"
-        validate_certs: no
+        url: "{{ item }}"
         state: present
+      loop: "{{ virtualbox_keys }}"
 
     - name: place apt repository
       apt_repository:
-        repo: deb [arch=amd64] {{ virtualbox_apt_repository }} {{ ansible_distribution_release }} contrib
+        repo: deb [arch=amd64] {{ virtualbox_apt_repository }} {{ ansible_distribution_release | lower }} contrib
         state: present
+        update_cache: no
   when:
     - ansible_pkg_mgr in ['apt']
 
