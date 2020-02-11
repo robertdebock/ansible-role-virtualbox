@@ -2,7 +2,7 @@ virtualbox
 =========
 
 <img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/>
-<a href="https://travis-ci.org/robertdebock/ansible-role-virtualbox"> <img src="https://travis-ci.org/robertdebock/ansible-role-virtualbox.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/"/> <img src="https://img.shields.io/ansible/quality/"/>
+<a href="https://travis-ci.org/robertdebock/ansible-role-virtualbox"> <img src="https://travis-ci.org/robertdebock/ansible-role-virtualbox.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/46445"/> <img src="https://img.shields.io/ansible/quality/46445"/>
 
 <a href="https://github.com/robertdebock/ansible-role-virtualbox/actions"><img src="https://github.com/robertdebock/ansible-role-virtualbox/workflows/GitHub%20Action/badge.svg"/></a>
 
@@ -33,6 +33,7 @@ The machine you are running this on, may need to be prepared, I use this playboo
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.ca_certificates
 ```
 
 After running this role, this playbook runs to verify that everything works, this may be a good example how you can use this role.
@@ -72,6 +73,7 @@ The following roles can be installed to ensure all requirements are met, using `
 ```yaml
 ---
 - robertdebock.bootstrap
+- robertdebock.ca_certificates
 
 ```
 
@@ -94,7 +96,7 @@ This role has been tested on these [container images](https://hub.docker.com/):
 |alpine|all|
 |debian|all|
 |el|7, 8|
-|fedora|all|
+|fedora|30, 31|
 |opensuse|all|
 |ubuntu|bionic|
 
