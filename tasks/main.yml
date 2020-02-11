@@ -4,6 +4,9 @@
   rpm_key:
     state: present
     key: "{{ item }}"
+  register: virtualbox_import_rpm_key
+  until: virtualbox_import_rpm_key is succeeded
+  retries: 3
   loop: "{{ virtualbox_keys }}"
   loop_control:
     label: "{{ item | basename }}"
@@ -33,6 +36,9 @@
       apt_key:
         url: "{{ item }}"
         state: present
+      register: virtualbox_import_apt_key
+      until: virtualbox_import_apt_key is succeeded
+      retries: 3
       loop: "{{ virtualbox_keys }}"
       loop_control:
         label: "{{ item | basename }}"
@@ -41,6 +47,9 @@
       apt_repository:
         repo: deb [arch=amd64] {{ virtualbox_apt_repository }} {{ ansible_distribution_release | lower }} contrib
         state: present
+      register: virtualbox_place_apt_repository
+      until: virtualbox_place_apt_repository is succeeded
+      retries: 3
   when:
     - ansible_pkg_mgr in ['apt']
 
@@ -48,10 +57,16 @@
   package:
     name: "{{ virtualbox_requirements }}"
     state: present
+  register: virtualbox_install_requirements
+  until: virtualbox_install_requirements is succeeded
+  retries: 3
 
 - name: install virtualbox
   package:
     name: "{{ virtualbox_package }}"
     state: present
+  register: virtualbox_install_virtualbox
+  until: virtualbox_install_virtualbox is succeeded
+  retries: 3
   notify:
     - run vboxconfig
