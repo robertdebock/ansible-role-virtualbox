@@ -29,7 +29,6 @@
       apt_repository:
         repo: deb [arch=amd64] {{ virtualbox_apt_repository }} {{ ansible_distribution_release | lower }} contrib
         state: present
-        update_cache: no
   when:
     - ansible_pkg_mgr in ['apt']
 
@@ -40,6 +39,7 @@
 
 - name: install virtualbox
   package:
-    name: VirtualBox-{{ virtualbox_version }}
+    name: "{{ virtualbox_package }}"
+    state: present
   notify:
     - run vboxconfig
