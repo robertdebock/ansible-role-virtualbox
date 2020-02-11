@@ -11,7 +11,7 @@ on:
       - '*'
   pull_request:
   schedule:
-    - cron: '5 19 22 * *'
+    - cron: '56 7 22 * *'
 
 jobs:
   lint:
@@ -46,8 +46,6 @@ jobs:
             tag: "30"
           - image: "fedora"
             tag: "31"
-          - image: "opensuse"
-            tag: "latest"
           - image: "ubuntu"
             tag: "latest"
     steps:

@@ -21,7 +21,6 @@ env:
     - image="centos" tag="latest"
     - image="fedora" tag="30"
     - image="fedora" tag="31"
-    - image="opensuse" tag="latest"
     - image="ubuntu" tag="latest"
 
 cache:

@@ -22,9 +22,6 @@ galaxy_info:
       versions:
         - 30
         - 31
-    - name: OpenSUSE
-      versions:
-        - all
     - name: Ubuntu
       versions:
         - bionic
