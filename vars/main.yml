@@ -2,8 +2,8 @@
 # vars file for virtualbox
 
 virtualbox_keys:
-  - "https://www.virtualbox.org/download/oracle_vbox_2016.asc"
-  - "https://www.virtualbox.org/download/oracle_vbox.asc"
+  - https://www.virtualbox.org/download/oracle_vbox_2016.asc
+  - https://www.virtualbox.org/download/oracle_vbox.asc
 
 _virtualbox_requirements:
   default:
