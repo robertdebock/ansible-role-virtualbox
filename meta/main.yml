@@ -19,7 +19,7 @@ galaxy_info:
         - all
     - name: Ubuntu
       versions:
-        - all
+        - bionic
 
   galaxy_tags:
     - virtualbox
