@@ -2,9 +2,9 @@
 
 Install and configure virtualbox on your system.
 
-|Travis|GitHub|Quality|Downloads|
-|------|------|-------|---------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-virtualbox.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-virtualbox)|[![github](https://github.com/robertdebock/ansible-role-virtualbox/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-virtualbox/actions)|[![quality](https://img.shields.io/ansible/quality/46445)](https://galaxy.ansible.com/robertdebock/virtualbox)|[![downloads](https://img.shields.io/ansible/role/d/46445)](https://galaxy.ansible.com/robertdebock/virtualbox)|
+|Travis|GitHub|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-virtualbox.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-virtualbox)|[![github](https://github.com/robertdebock/ansible-role-virtualbox/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-virtualbox/actions)|[![quality](https://img.shields.io/ansible/quality/46445)](https://galaxy.ansible.com/robertdebock/virtualbox)|[![downloads](https://img.shields.io/ansible/role/d/46445)](https://galaxy.ansible.com/robertdebock/virtualbox)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-virtualbox.svg)](https://github.com/robertdebock/ansible-role-virtualbox/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
