@@ -13,9 +13,6 @@ galaxy_info:
     - name: Debian
       versions:
         - buster
-    - name: Fedora
-      versions:
-        - 31
     - name: Ubuntu
       versions:
         - focal

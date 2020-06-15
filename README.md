@@ -86,7 +86,6 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |---------|----|
 |el|7|
 |debian|buster|
-|fedora|31|
 |ubuntu|focal, bionic|
 
 The minimum version of Ansible required is 2.8 but tests have been done to:
@@ -102,6 +101,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 | variation                 | reason                 |
 |---------------------------|------------------------|
 | centos:8 | Ansible module rpm_key is not idempotent. |
+| fedora | file /usr/bin/VBox conflicts between attempted installs of VirtualBox-6.1-6.1.10_138449_fedora31-1.x86_64 and VirtualBox-5.2-5.2.42_137960_fedora29-1.x86_64 |
 
 
 ## [Testing](#testing)
