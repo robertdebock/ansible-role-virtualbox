@@ -1,0 +1,4 @@
+---
+exceptions:
+  - variation: centos:8
+    reason: "Ansible module rpm_key is not idempotent."

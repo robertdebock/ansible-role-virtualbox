@@ -85,7 +85,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 
 |container|tags|
 |---------|----|
-|el|7, 8|
+|el|7|
 |debian|buster|
 |fedora|31|
 |ubuntu|focal, bionic|
@@ -96,6 +96,13 @@ The minimum version of Ansible required is 2.8 but tests have been done to:
 - The current version.
 - The development version.
 
+## [Exceptions](#exceptions)
+
+Some variarations of the build matrix do not work. These are the variations and reasons why the build won't work:
+
+| variation                 | reason                 |
+|---------------------------|------------------------|
+| centos:8 | Ansible module rpm_key is not idempotent. |
 
 
 ## [Testing](#testing)
