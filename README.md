@@ -54,7 +54,6 @@ These variables are set in `defaults/main.yml`:
 ```yaml
 ---
 # defaults file for virtualbox
-
 virtualbox_version: 6.1
 ```
 
