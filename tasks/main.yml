@@ -61,6 +61,14 @@
   until: virtualbox_install_requirements is succeeded
   retries: 3
 
+- name: check
+  command: rpm -qa
+  register: check
+
+- name: display
+  debug:
+    msg: "{{ check }}"
+
 - name: install virtualbox
   package:
     name: "{{ virtualbox_package }}"
