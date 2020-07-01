@@ -1,5 +1,8 @@
 ---
 # tasks file for virtualbox
+- name: include assert.yml
+  include_tasks: assert.yml
+
 - name: import rpm key
   rpm_key:
     state: present

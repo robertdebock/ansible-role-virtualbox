@@ -1,0 +1,6 @@
+---
+- name: test if virtualbox_version is set correctly
+  assert:
+    that:
+      - virtualbox_version is defined
+      - virtualbox_version | length > 0
