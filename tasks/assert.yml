@@ -4,3 +4,4 @@
     that:
       - virtualbox_version is defined
       - virtualbox_version | length > 0
+    quiet: yes
