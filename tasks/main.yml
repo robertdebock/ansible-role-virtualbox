@@ -12,7 +12,7 @@
   loop_control:
     label: "{{ item | basename }}"
   when:
-    - ansible_pkg_mgr in ['yum', 'dnf', 'zypper']
+    - ansible_pkg_mgr in [ "yum", "dnf", "zypper" ]
 
 - name: place yum repository
   yum_repository:
@@ -21,7 +21,7 @@
     baseurl: "{{ virtualbox_yum_baseurl }}"
     gpgcheck: yes
   when:
-    - ansible_pkg_mgr in ['yum', 'dnf']
+    - ansible_pkg_mgr in [ "yum", "dnf" ]
 
 - name: place zypper repository
   zypper_repository:
@@ -29,7 +29,7 @@
     repo: "{{ virtualbox_yum_baseurl }}"
     state: present
   when:
-    - ansible_pkg_mgr in ['zypper']
+    - ansible_pkg_mgr in [ "zypper" ]
 
 - name: configure apt repository
   block:
@@ -43,10 +43,10 @@
 
     - name: place apt repository
       apt_repository:
-        repo: deb [arch=amd64] {{ virtualbox_apt_repository }} {{ ansible_distribution_release | lower }} contrib
+        repo: deb [ arch=amd64 ] {{ virtualbox_apt_repository }} {{ ansible_distribution_release | lower }} contrib
         state: present
   when:
-    - ansible_pkg_mgr in ['apt']
+    - ansible_pkg_mgr in [ "apt" ]
 
 - name: install requirements
   package:
