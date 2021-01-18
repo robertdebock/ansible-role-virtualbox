@@ -2,9 +2,9 @@
 
 Install and configure virtualbox on your system.
 
-|Travis|GitHub|GitLab|Quality|Downloads|Version|
-|------|------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-virtualbox.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-virtualbox)|[![github](https://github.com/robertdebock/ansible-role-virtualbox/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-virtualbox/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-virtualbox/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-virtualbox)|[![quality](https://img.shields.io/ansible/quality/46445)](https://galaxy.ansible.com/robertdebock/virtualbox)|[![downloads](https://img.shields.io/ansible/role/d/46445)](https://galaxy.ansible.com/robertdebock/virtualbox)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-virtualbox.svg)](https://github.com/robertdebock/ansible-role-virtualbox/releases/)|
+|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![github](https://github.com/robertdebock/ansible-role-virtualbox/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-virtualbox/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-virtualbox/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-virtualbox)|[![quality](https://img.shields.io/ansible/quality/46445)](https://galaxy.ansible.com/robertdebock/virtualbox)|[![downloads](https://img.shields.io/ansible/role/d/46445)](https://galaxy.ansible.com/robertdebock/virtualbox)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-virtualbox.svg)](https://github.com/robertdebock/ansible-role-virtualbox/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -53,10 +53,10 @@ virtualbox_version: "6.1"
 
 The following roles are used to prepare a system. You may choose to prepare your system in another way, I have tested these roles as well.
 
-| Requirement | Travis | GitHub |
+| Requirement | GitHub | GitLab |
 |-------------|--------|--------|
-| [robertdebock.bootstrap](https://galaxy.ansible.com/robertdebock/bootstrap) | [![Build Status Travis](https://travis-ci.com/robertdebock/ansible-role-bootstrap.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-bootstrap) | [![Build Status GitHub](https://github.com/robertdebock/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-bootstrap/actions) |
-| [robertdebock.ca_certificates](https://galaxy.ansible.com/robertdebock/ca_certificates) | [![Build Status Travis](https://travis-ci.com/robertdebock/ansible-role-ca_certificates.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-ca_certificates) | [![Build Status GitHub](https://github.com/robertdebock/ansible-role-ca_certificates/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-ca_certificates/actions) |
+| [robertdebock.bootstrap](https://galaxy.ansible.com/robertdebock/bootstrap) | [![Build Status GitHub](https://github.com/robertdebock/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-bootstrap/actions) | [![Build Status GitLab ](https://gitlab.com/robertdebock/ansible-role-ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-bootstrap)
+| [robertdebock.ca_certificates](https://galaxy.ansible.com/robertdebock/ca_certificates) | [![Build Status GitHub](https://github.com/robertdebock/ansible-role-ca_certificates/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-ca_certificates/actions) | [![Build Status GitLab ](https://gitlab.com/robertdebock/ansible-role-ansible-role-ca_certificates/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-ca_certificates)
 
 ## [Context](#context)
 
@@ -76,7 +76,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |fedora|32|
 |ubuntu|focal, bionic|
 
-The minimum version of Ansible required is 2.9, tests have been done to:
+The minimum version of Ansible required is 2.10, tests have been done to:
 
 - The previous version.
 - The current version.
@@ -92,39 +92,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 | fedora | file /usr/bin/VBox conflicts between attempted installs of VirtualBox-6.1-6.1.10_138449_fedora31-1.x86_64 and VirtualBox-5.2-5.2.42_137960_fedora29-1.x86_64 |
 
 
-## [Testing](#testing)
-
-[Unit tests](https://travis-ci.com/robertdebock/ansible-role-virtualbox) are done on every commit, pull request, release and periodically.
-
 If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-virtualbox/issues)
-
-Testing is done using [Tox](https://tox.readthedocs.io/en/latest/) and [Molecule](https://github.com/ansible/molecule):
-
-[Tox](https://tox.readthedocs.io/en/latest/) tests multiple ansible versions.
-[Molecule](https://github.com/ansible/molecule) tests multiple distributions.
-
-To test using the defaults (any installed ansible version, namespace: `robertdebock`, image: `fedora`, tag: `latest`):
-
-```
-molecule test
-
-# Or select a specific image:
-image=ubuntu molecule test
-# Or select a specific image and a specific tag:
-image="debian" tag="stable" tox
-```
-
-Or you can test multiple versions of Ansible, and select images:
-Tox allows multiple versions of Ansible to be tested. To run the default (namespace: `robertdebock`, image: `fedora`, tag: `latest`) tests:
-
-```
-tox
-
-# To run CentOS (namespace: `robertdebock`, tag: `latest`)
-image="centos" tox
-# Or customize more:
-image="debian" tag="stable" tox
-```
 
 ## [License](#license)
 
