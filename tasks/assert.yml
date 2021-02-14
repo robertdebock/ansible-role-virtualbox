@@ -1,7 +1,7 @@
 ---
 
 - name: test if virtualbox_version is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - virtualbox_version is defined
       - virtualbox_version is string
