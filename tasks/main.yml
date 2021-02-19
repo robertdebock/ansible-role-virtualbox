@@ -7,7 +7,7 @@
   delegate_to: localhost
 
 - name: import rpm key
-  rpm_key:
+  ansible.builtin.rpm_key:
     state: present
     key: "{{ item }}"
   loop: "{{ virtualbox_keys }}"
@@ -17,7 +17,7 @@
     - ansible_pkg_mgr in [ "yum", "dnf", "zypper" ]
 
 - name: place yum repository
-  yum_repository:
+  ansible.builtin.yum_repository:
     name: virtualbox
     description: Fedora $releasever - $basearch - VirtualBox
     baseurl: "{{ virtualbox_yum_baseurl }}"
@@ -26,7 +26,7 @@
     - ansible_pkg_mgr in [ "yum", "dnf" ]
 
 - name: place zypper repository
-  zypper_repository:
+  community.general.zypper_repository:
     name: virtualbox
     repo: "{{ virtualbox_yum_baseurl }}"
     state: present
@@ -51,12 +51,12 @@
     - ansible_pkg_mgr in [ "apt" ]
 
 - name: install requirements
-  package:
+  ansible.builtin.package:
     name: "{{ virtualbox_requirements }}"
     state: present
 
 - name: install virtualbox
-  package:
+  ansible.builtin.package:
     name: "{{ virtualbox_package }}"
     state: present
   notify:
