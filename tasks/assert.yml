@@ -5,4 +5,5 @@
     that:
       - virtualbox_version is defined
       - virtualbox_version is string
+      - virtualbox_version is not none
     quiet: yes
