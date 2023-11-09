@@ -2,9 +2,9 @@
 
 Install and configure virtualbox on your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![github](https://github.com/robertdebock/ansible-role-virtualbox/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-virtualbox/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-virtualbox/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-virtualbox)|[![quality](https://img.shields.io/ansible/quality/46445)](https://galaxy.ansible.com/robertdebock/virtualbox)|[![downloads](https://img.shields.io/ansible/role/d/46445)](https://galaxy.ansible.com/robertdebock/virtualbox)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-virtualbox.svg)](https://github.com/robertdebock/ansible-role-virtualbox/releases/)|
+|GitHub|GitLab|Downloads|Version|
+|------|------|---------|-------|
+|[![github](https://github.com/robertdebock/ansible-role-virtualbox/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-virtualbox/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-virtualbox/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-virtualbox)|[![downloads](https://img.shields.io/ansible/role/d/24629)](https://galaxy.ansible.com/robertdebock/virtualbox)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-virtualbox.svg)](https://github.com/robertdebock/ansible-role-virtualbox/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -84,7 +84,7 @@ The minimum version of Ansible required is 2.12, tests have been done to:
 - The current version.
 - The development version.
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-virtualbox/issues)
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-virtualbox/issues).
 
 ## [License](#license)
 
