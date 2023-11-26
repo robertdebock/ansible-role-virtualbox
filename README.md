@@ -1,4 +1,4 @@
-# Ansible role [virtualbox](#virtualbox)
+# [Ansible role virtualbox](#virtualbox)
 
 Install and configure virtualbox on your system.
 
