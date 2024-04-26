@@ -19,8 +19,6 @@ molecule:
       - image: "debian"
         tag: "bullseye"
       - image: "ubuntu"
-        tag: "bionic"
-      - image: "ubuntu"
         tag: "focal"
 
 galaxy:
