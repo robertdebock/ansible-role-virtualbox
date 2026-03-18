@@ -15,7 +15,7 @@
   loop_control:
     label: "{{ item | basename }}"
   when:
-    - ansible_pkg_mgr in [ "yum", "dnf", "zypper", "dnf5" ]
+    - ansible_facts['pkg_mgr'] in [ "yum", "dnf", "zypper", "dnf5" ]
 
 - name: Place yum repository
   ansible.builtin.yum_repository:
@@ -24,7 +24,7 @@
     baseurl: "{{ virtualbox_yum_baseurl }}"
     gpgcheck: true
   when:
-    - ansible_pkg_mgr in [ "yum", "dnf", "dnf5" ]
+    - ansible_facts['pkg_mgr'] in [ "yum", "dnf", "dnf5" ]
 
 - name: Place zypper repository
   community.general.zypper_repository:
@@ -32,11 +32,11 @@
     repo: "{{ virtualbox_yum_baseurl }}"
     state: present
   when:
-    - ansible_pkg_mgr in [ "zypper" ]
+    - ansible_facts['pkg_mgr'] in [ "zypper" ]
 
 - name: Configure apt repository
   when:
-    - ansible_pkg_mgr in [ "apt" ]
+    - ansible_facts['pkg_mgr'] in [ "apt" ]
   block:
     - name: Import apt key
       ansible.builtin.apt_key:
@@ -48,7 +48,7 @@
 
     - name: Place apt repository
       ansible.builtin.apt_repository:
-        repo: deb [ arch=amd64 ] {{ virtualbox_apt_repository }} {{ ansible_distribution_release | lower }} contrib
+        repo: deb [ arch=amd64 ] {{ virtualbox_apt_repository }} {{ ansible_facts['distribution_release'] | lower }} contrib
         state: present
 
 - name: Install requirements
