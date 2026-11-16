@@ -39,9 +39,10 @@
     - ansible_facts['pkg_mgr'] in [ "apt" ]
   block:
     - name: Import apt key
-      ansible.builtin.apt_key:
+      ansible.builtin.get_url:
         url: "{{ item }}"
-        state: present
+        dest: /etc/apt/trusted.gpg.d/{{ item | basename }}.asc
+        mode: "0644"
       loop: "{{ virtualbox_keys }}"
       loop_control:
         label: "{{ item | basename }}"
