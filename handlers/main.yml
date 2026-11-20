@@ -4,4 +4,5 @@
 - name: Run vboxconfig
   ansible.builtin.command:
     cmd: /sbin/vboxconfig
-  changed_when: true
+  changed_when:
+    - true
