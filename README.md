@@ -45,7 +45,7 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 ---
 # defaults file for virtualbox
 
-virtualbox_version: "6.1"
+virtualbox_version: "7.2"
 ```
 
 ## [Requirements](#requirements)
@@ -77,11 +77,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |[EL](https://hub.docker.com/r/robertdebock/enterpriselinux)|9|
 |[Debian](https://hub.docker.com/r/robertdebock/debian)|all|
 
-The minimum version of Ansible required is 2.12, tests have been done on:
-
-- The previous version.
-- The current version.
-- The development version.
+The minimum version of Ansible (ansible-core) required is 2.20, tests are done with the latest release of ansible-core.
 
 If you find issues, please register them on [GitHub](https://github.com/robertdebock/ansible-role-virtualbox/issues).
 
